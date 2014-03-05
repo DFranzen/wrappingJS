@@ -1,0 +1,7 @@
+p=com.appspot.selfieChallenge.apk
+cd sc
+rm ../$p
+zip -r ../$p *
+cd ..
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore debug.keystore -storepass "blubbblubb" $p sampleName
+adb install -r $p

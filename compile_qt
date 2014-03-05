@@ -1,0 +1,6 @@
+cd qtag
+rm ../com.coloreight.qtag.apk
+zip -r ../com.coloreight.qtag.apk *
+cd ..
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore debug.keystore -storepass "blubbblubb" com.coloreight.qtag.apk sampleName
+adb install -r com.coloreight.qtag.apk
